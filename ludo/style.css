@@ -1,0 +1,422 @@
+/* Todo o header e o menu na parte de cima, não sei se vamo deixar assim
+talvez mude porque pode ser que fique bugado nos outro navegador*/
+header{
+  background-color: 	#162b64;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  cursor: default;
+}
+
+
+/* Meio obvio que eh a logo neh vey */
+.logo img{
+  object-fit: contain;
+  height: 150px;
+  margin-top: 10%;
+  margin-right: 80px;
+  margin-left: 10px;
+  display: block;
+}
+
+
+/*Aqui eh as 3 barra do lado da logo que vai abrir mais opçoes, um menuzinho que ta
+no mokup no canva, vou ver se deixo pra falar a vdd, talvez n seja tao util*/
+.opcoes{
+  color: white;
+  cursor: pointer;
+  font-size: 40px;
+  margin-right: 1%;
+}
+
+
+
+/* Aqui é para personalizar as opçoes basica que estao no nav
+Destraques, categorias e comunidade */
+nav a{
+  color: white;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5vh;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 53px;
+  left: 0;
+  width: 0%;
+  height: 5px; 
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Mudar as cores */
+.l:hover::after {
+  background-color: rgb(255, 60, 0);
+}
+.l:hover i {
+  color: rgb(255, 60, 0);
+}
+
+
+.a:hover::after {
+  background-color: #0062ff;
+}
+.a:hover i{
+  color:  #0062ff;
+}
+
+
+.v:hover::after {
+  background-color: rgb(255, 0, 76);
+}
+.v:hover i{
+  color: rgb(255, 0, 76);
+}
+
+
+
+/* aqui a barra de pesquisa */
+.pesquisa{
+  width: 250px;
+  height: 40px;
+  border-radius: 15px;
+  margin-left: 80px;
+  padding: 1%;
+  border-style: none;
+  }
+
+
+/* Aqui vai ficar a main do site, cor de fundo, textos enfim, vou ver se faço
+separado a parte de add jogos*/
+
+/* A cor do fundo e o margin pra arrumar, pq o navegador adiciona uma margin auto
+que "buga" o header, n fica do jeito que quero */
+html, body{  /* O html, body, basicamente muda o body, mas precisei do html pra arrumar o footer */
+  background: #0e153f;
+   height: 100%;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+}
+
+
+/* As fontes que vamo usar editada, no caso h1, p, etc */
+h1{
+  color: white;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 40px;
+  cursor: default;
+  margin-top: 5%;
+}
+
+
+/* Icone de usuario */
+.user i{
+font-size: 35px;
+color: white;
+position: absolute;
+}
+
+
+/* O quadrado do fundo na tela de cadastro, onde fica os botoes */
+.cads{
+
+  background-color: #142481f1;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+  width: 60%;
+  height: 360px;
+  border-radius: 25px;
+}
+
+
+/* Pagina de cadastro */
+.cad label{    
+  color: white;
+  margin-left: 25px;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cad input{   /* Coloquei tudo em uma div .cad pq tava bugando a tela inicial */
+  margin-left: 25px;
+  margin-bottom: 16px;
+  border-radius: 50px;
+  width: 300px;
+  height: 25px;
+  border: 0;
+}
+
+
+
+/* Botao de cadastro, pra mudar de cor quando mouse passar por cima */
+.button input[type="submit"] {
+ width: 150px;
+  height: 50px;
+background-color: #1e3a8a;  
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 30px;
+font-family: Arial, Helvetica, sans-serif;
+transition: background-color 0.4s ease; /*transition nao funciona com cor degrade */
+}
+
+.button input[type="submit"]:hover {
+background: #0db71e; /* Cor que tava aqui era degrade, n funciona pro transition */
+color: black;
+}
+
+
+
+/* Arrumar o footer ja, o rodapé*/
+footer{
+background-color: #070707;
+color: white;
+text-align: start;
+padding: 20px;
+margin-top: 10px;
+}
+
+
+/* Pra ajeitar o conteudo pra ocupar o maximo de espaço possivel
+pro footer ficar la em baixo, combina junto com o hmtl, body que ta la encima
+mas talvez bugue com o site e nos tenha que fazer de outro jt, NAO TESTEI */
+
+
+
+/* Um body separado pra tela de cadastro, fica mais bonitin */
+body.cadastro{
+background-image: url('images/gamesbackgroud.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+
+
+/* Para fazer o conteudo ocupar o maximo de
+espaço possivel e manter o footer em baixo */
+.content{
+flex: 1;
+}
+
+
+
+/* Fundo do jogo jogo principal que fica grandão na parte de cima no carrosel */
+.fundo {
+background-color: #142481f1;
+margin-left: 40px;
+width: 56%;
+height: 530px;
+border-radius: 25px;
+display: inline-flex;
+cursor: pointer;
+transition: box-shadow 0.3s ease; /* Suaviza a transição */
+}
+
+/* Quando passar o mouse, adiciona contorno azul */
+.fundo:hover {
+box-shadow: 0 0 0 4px #0062ff; /* Contorno azul */
+}
+
+
+.fundo img{
+border-radius: 30px;
+height: 78%;
+width: 93%;
+margin-left: 3.5%;
+margin-top: 2%;
+object-fit: cover;
+}
+
+
+/* Para alinhar tudo eu tive que fazer 2 div para os jogos normal. Porque o games1 coloca na parte de cima
+e o 2 na parte de baixo e em todo o resto, porque ele fica "certo", não tem o absolute ent eh gg */
+.games{
+background-color: #142481f1;
+margin-left: 40px;
+width: 20%;
+height: 380px;
+border-radius: 25px;
+position: relative;
+vertical-align: top;
+display: inline-block;
+cursor: pointer;
+transition: box-shadow 0.3s ease;
+}
+
+.games:hover {
+box-shadow: 0 0 0 4px #0062ff; /* Contorno azul */
+}
+
+.games img{
+border-radius: 30px;
+height: 65%;
+width: 93%;
+margin-left: 3.5%;
+margin-top: 3%;
+object-fit: cover;
+}
+
+.games h2{
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+margin-left: 5%;
+}
+
+.games h3{
+color: white;
+position: absolute;
+margin-top: 0.05%;
+margin-left: 5%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+background-color: #0062ff; /* Cor padrão */
+padding: 6px 13px;
+transition: background-color 0.3s ease; /* Suaviza a transição */
+}
+
+.games h4{
+color: white;
+position: absolute;
+margin-top: 0.05%;
+margin-left: 33%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+background: linear-gradient(45deg, red, rgb(255, 94, 0));
+padding: 6px 13px;
+}
+
+.games:hover h3{
+background-color: #32cd32;
+}
+
+.games1{
+background-color: #142481f1;
+margin-left: 40px;
+width: 24%;
+height: 72%;
+border-radius: 25px;
+display: inline-flex;
+position: absolute;
+cursor: pointer;
+transition: box-shadow 0.3s ease; /* Suaviza a transição */
+}
+
+/* Quando passar o mouse, adiciona contorno azul */
+.games1:hover {
+box-shadow: 0 0 0 4px #0062ff; /* Contorno azul */
+}
+
+.games1 img{
+border-radius: 30px;
+height: 78%;
+width: 93%;
+margin-left: 3.5%;
+margin-top: 2%;
+object-fit: cover;
+}
+
+.games1 h3{
+color: white;
+position: absolute;
+margin-top: 130%;
+margin-left: 3%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+background-color: #0062ff; /* Cor padrão */
+padding: 8px 15px;
+transition: background-color 0.3s ease; /* Suaviza a transição */
+}
+
+.games1:hover h3 {
+background-color: #32cd32; /* Verde mais claro */
+}
+
+.games1 h2{
+color: white;
+color: white;
+position: absolute;
+margin-top: 120%;
+margin-left: 3%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+}
+
+/* Parte final onde mostra os jogos em "lista" */
+.g{
+background-color: #142481f1;
+margin-left: 40px;
+margin-top: 25px;
+width: 43%;
+height: 250px;
+border-radius: 25px;
+display: inline-flex;
+position: flex;
+cursor: pointer;
+transition: box-shadow 0.3s ease;
+}
+
+.g:hover {
+box-shadow: 0 0 0 4px #0062ff; /* Contorno azul */
+}
+
+
+/* Configurando o Jogo principal do carrosel, texto, animaçao etc */
+.fundo h2{
+color: white;
+position: absolute;
+margin-top: 30%;
+margin-left: 2%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 30px;
+}
+
+.fundo h3 {
+color: white;
+position: absolute;
+margin-top: 30%;
+margin-left: 46.5%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+background-color: #0062ff; /* Cor padrão */
+padding: 8px 15px;
+transition: background-color 0.3s ease; /* Suaviza a transição */
+}
+
+/* Quando o mouse estiver sobre a .fundo, muda o fundo do h3 */
+.fundo:hover h3 {
+background-color: #32cd32; /* Verde mais claro */
+}
+
+
+
+
+.fundo h4{
+color: white;
+position: absolute;
+margin-top: 30%;
+margin-left: 42%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+background: linear-gradient(45deg, red, rgb(255, 94, 0));
+padding: 9px 16px 9px 16px;
+}
+
+
+
